@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (menuToggle && navLinks) {
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-            
+
             // Optional: Animate hamburger to X
             const spans = menuToggle.querySelectorAll('span');
             if (navLinks.classList.contains('active')) {
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
-            
+
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 // Close mobile menu if open
@@ -51,15 +51,51 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Simple Lightbox (Optional - can be expanded)
+    // Simple Lightbox
     const galleryItems = document.querySelectorAll('.gallery-item');
-    // For a full lightbox, we'd need more markup/CSS, but this is a placeholder for where that logic goes.
-    // A simple implementation would be to create a modal on click.
-    
+
+    // Create lightbox elements
+    const lightbox = document.createElement('div');
+    lightbox.className = 'lightbox';
+    const lightboxImg = document.createElement('img');
+    const lightboxClose = document.createElement('button');
+    lightboxClose.className = 'lightbox-close';
+    lightboxClose.innerHTML = '&times;';
+
+    lightbox.appendChild(lightboxImg);
+    lightbox.appendChild(lightboxClose);
+    document.body.appendChild(lightbox);
+
     galleryItems.forEach(item => {
         item.addEventListener('click', () => {
-            console.log('Gallery item clicked - Lightbox logic would go here');
-            // Example: Open a modal with the image
+            // In a real scenario, we'd grab the high-res image URL. 
+            // For this demo, we'll use the placeholder text or a placeholder image service.
+            // Since we are using divs with text placeholders, let's just show a placeholder image.
+            // If there was an <img> tag, we would use: const src = item.querySelector('img').src;
+
+            // Simulating an image source for the demo
+            const title = item.querySelector('h3').innerText;
+            lightboxImg.src = `https://via.placeholder.com/800x600?text=${encodeURIComponent(title)}`;
+            lightboxImg.alt = title;
+
+            lightbox.classList.add('active');
         });
+    });
+
+    // Close lightbox
+    lightboxClose.addEventListener('click', () => {
+        lightbox.classList.remove('active');
+    });
+
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            lightbox.classList.remove('active');
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+            lightbox.classList.remove('active');
+        }
     });
 });
