@@ -21,12 +21,13 @@ collections:
           - {label: "Hero Description", name: "hero_description", widget: "text"}
           - {label: "About Title", name: "about_title", widget: "string"}
           - {label: "About Text", name: "about_text", widget: "markdown"}
-  - name: "gallery"
-    label: "Gallery"
-    folder: "content/gallery"
+  - name: "projects"
+    label: "Projects"
+    folder: "content/projects"
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Image", name: "image", widget: "image"}
-      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Project Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text", required: false}
+      - {label: "Images", name: "images", widget: "list", field: {label: "Image", name: "image", widget: "image"}}
+      - {label: "Featured Image", name: "featured_image", widget: "image", hint: "Main thumbnail shown in gallery"}
