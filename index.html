@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quality Residential Contractor | Your Name</title>
-    <meta name="description" content="Professional residential contractor specializing in renovations, remodeling, and custom builds. Quality craftsmanship you can trust.">
+    <meta name="description"
+        content="Professional residential contractor specializing in renovations, remodeling, and custom builds. Quality craftsmanship you can trust.">
     <link rel="stylesheet" href="assets/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
     <header class="site-header">
         <div class="container">
-            <a href="index.html" class="logo">Contractor Name</a>
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="2VM SoCal Construction" height="50">
+            </a>
             <nav class="main-nav">
                 <button class="menu-toggle" aria-label="Toggle navigation">
                     <span></span>
@@ -24,7 +29,7 @@
                 <ul class="nav-links">
                     <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#gallery">Our Work</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -36,7 +41,8 @@
             <div class="container">
                 <div class="hero-content">
                     <h1>Building Your Vision with Precision & Care</h1>
-                    <p>Expert residential renovations and custom builds. We turn your house into the home of your dreams.</p>
+                    <p>Expert residential renovations and custom builds. We turn your house into the home of your
+                        dreams.</p>
                     <a href="#contact" class="btn btn-primary">Get a Free Quote</a>
                 </div>
             </div>
@@ -47,7 +53,9 @@
                 <div class="about-grid">
                     <div class="about-text">
                         <h2>Quality Craftsmanship, Honest Service</h2>
-                        <p>With over 15 years of experience, we pride ourselves on delivering top-notch residential construction services. From kitchen remodels to full home additions, we handle every project with the same level of dedication and detail.</p>
+                        <p>With over 15 years of experience, we pride ourselves on delivering top-notch residential
+                            construction services. From kitchen remodels to full home additions, we handle every project
+                            with the same level of dedication and detail.</p>
                         <ul class="feature-list">
                             <li>Licensed & Insured</li>
                             <li>Transparent Pricing</li>
@@ -64,31 +72,31 @@
 
         <section id="gallery" class="gallery-section">
             <div class="container">
-                <h2>Our Recent Work</h2>
+                <h2>Our Work</h2>
                 <div class="gallery-grid">
-                    <!-- Gallery Items will go here. Using placeholders for now. -->
-                    <div class="gallery-item">
-                        <div class="img-placeholder">Project 1</div>
+                    <div class="gallery-item"
+                        data-images='["assets/images/kitchen.png", "assets/images/bathroom.png", "assets/images/deck.png"]'
+                        data-title="Kitchen Remodel">
+                        <img src="assets/images/kitchen.png" alt="Modern Kitchen Remodel">
                         <div class="overlay">
                             <h3>Kitchen Remodel</h3>
+                            <p>Click to view project</p>
                         </div>
                     </div>
-                    <div class="gallery-item">
-                        <div class="img-placeholder">Project 2</div>
+                    <div class="gallery-item" data-images='["assets/images/bathroom.png", "assets/images/kitchen.png"]'
+                        data-title="Bathroom Update">
+                        <img src="assets/images/bathroom.png" alt="Luxury Bathroom Renovation">
                         <div class="overlay">
                             <h3>Bathroom Update</h3>
+                            <p>Click to view project</p>
                         </div>
                     </div>
-                    <div class="gallery-item">
-                        <div class="img-placeholder">Project 3</div>
+                    <div class="gallery-item" data-images='["assets/images/deck.png", "assets/images/kitchen.png"]'
+                        data-title="Deck Construction">
+                        <img src="assets/images/deck.png" alt="Custom Wood Deck">
                         <div class="overlay">
                             <h3>Deck Construction</h3>
-                        </div>
-                    </div>
-                     <div class="gallery-item">
-                        <div class="img-placeholder">Project 4</div>
-                        <div class="overlay">
-                            <h3>Living Room Renovation</h3>
+                            <p>Click to view project</p>
                         </div>
                     </div>
                 </div>
@@ -99,16 +107,15 @@
             <div class="container">
                 <div class="contact-wrapper">
                     <div class="contact-info">
-                        <h2>Let's Discuss Your Project</h2>
-                        <p>Ready to start? Fill out the form or give us a call.</p>
+                        <h2>Contact us for information or a quote</h2>
                         <div class="info-item">
-                            <strong>Phone:</strong> (555) 123-4567
+                            <strong>Phone:</strong> 562-355-0602
                         </div>
                         <div class="info-item">
-                            <strong>Email:</strong> info@contractorname.com
+                            <strong>Email:</strong> 2vmhome@2vmsocalconstruction.com
                         </div>
                         <div class="info-item">
-                            <strong>Service Area:</strong> City, State & Surrounding Areas
+                            <strong>Service Area:</strong> Southern California
                         </div>
                     </div>
                     <form name="contact" method="POST" data-netlify="true" class="contact-form">
@@ -133,10 +140,13 @@
 
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; <script>document.write(new Date().getFullYear())</script> Contractor Name. All rights reserved.</p>
+            <p>&copy;
+                <script>document.write(new Date().getFullYear())</script> Contractor Name. All rights reserved.
+            </p>
         </div>
     </footer>
 
     <script src="assets/main.js"></script>
 </body>
+
 </html>
