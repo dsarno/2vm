@@ -42,34 +42,32 @@ async function loadProjects() {
 
 function initializeGallery() {
     const galleryItems = document.querySelectorAll('.gallery-item');
-
+    
     galleryItems.forEach(item => {
-        // Remove old listeners by cloning
-        const newItem = item.cloneNode(true);
-        item.parentNode.replaceChild(newItem, item);
-    });
-
-    // Re-attach event listeners
-    document.querySelectorAll('.gallery-item').forEach(item => {
-        item.addEventListener('click', () => {
-            const imagesData = item.getAttribute('data-images');
-            const title = item.getAttribute('data-title');
-
+        item.addEventListener('click', function() {
+            const imagesData = this.getAttribute('data-images');
+            const title = this.getAttribute('data-title');
+            
             if (imagesData) {
                 try {
-                    currentImages = JSON.parse(imagesData);
-                    if (currentImages.length > 0) {
-                        currentIndex = 0;
-                        showImage(0);
-                        lightboxCaption.innerText = title || '';
-                        lightbox.classList.add('active');
-
-                        if (currentImages.length > 1) {
-                            lightboxPrev.style.display = 'block';
-                            lightboxNext.style.display = 'block';
+                    window.currentImages = JSON.parse(imagesData);
+                    if (window.currentImages.length > 0) {
+                        window.currentIndex = 0;
+                        window.showImage(0);
+                        const lightboxCaption = document.querySelector('.lightbox-caption');
+                        const lightboxPrev = document.querySelector('.lightbox-prev');
+                        const lightboxNext = document.querySelector('.lightbox-next');
+                        const lightbox = document.querySelector('.lightbox');
+                        
+                        if (lightboxCaption) lightboxCaption.innerText = title || '';
+                        if (lightbox) lightbox.classList.add('active');
+                        
+                        if (window.currentImages.length > 1) {
+                            if (lightboxPrev) lightboxPrev.style.display = 'block';
+                            if (lightboxNext) lightboxNext.style.display = 'block';
                         } else {
-                            lightboxPrev.style.display = 'none';
-                            lightboxNext.style.display = 'none';
+                            if (lightboxPrev) lightboxPrev.style.display = 'none';
+                            if (lightboxNext) lightboxNext.style.display = 'none';
                         }
                     }
                 } catch (e) {
