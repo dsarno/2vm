@@ -125,10 +125,10 @@ h6 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('images/header_bg_spanish.png');
+    background-image: url('images/header_bg_geometric_warm.png');
     background-size: cover;
     background-position: center;
-    opacity: 0.15;
+    opacity: 0.2;
     z-index: 0;
     pointer-events: none;
 }
